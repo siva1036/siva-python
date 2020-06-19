@@ -1,0 +1,368 @@
+1.	No is prime or not
+
+num=int(input("Enter a number:"))
+if num > 1:  
+   for i in range(2,num):  
+       if (num % i) == 0:  
+           print(num,"is not a prime number")  
+           break  
+   else:  
+       print(num,"is a prime number")  
+ else:  
+   print(num,"is not a prime number") 
+2.	check list of prime numbers within a range
+lower = int(input("Enter lower range: "))  
+      	upper = int(input("Enter upper range: "))  
+  
+for num in range(lower,  upper + 1):  
+   if num > 1:  
+       for i in range(2,num):  
+           if (num % i) == 0:  
+               break  
+       else:  
+           print(num)
+3.	check whether a no is armstrong or not
+num = int(input("Enter a number: "))  
+sum = 0  
+temp = num  
+  
+while temp > 0:  
+   digit = temp % 10  
+   sum += digit ** 3  
+   temp //= 10  
+  
+if num == sum:  
+   print(num,"is an Armstrong number")  
+else:  
+   print(num,"is not an Armstrong number")
+
+4.	list of armstrong numbers between two ranges
+lower = int(input("Enter lower range: "))
+upper = int(input("Enter upper range: "))
+ for num in range(lower,upper + 1):
+   sum = 0
+    temp = num
+   while temp > 0:
+       digit = temp % 10
+       sum += digit ** 3
+       temp //= 10
+    if num == sum:
+       print(num)
+5.	sum of digits
+n=int(input("Enter a number:"))
+sum=0
+while(n>0):
+    digit=n%10
+   sum=sum+digit
+    n=n//10
+print("The total sum of digits is:",sum)
+6.	product of digits
+num = int(input("Enter any number : "))
+temp = num
+product = 1;
+while(temp != 0):
+    product = product * (temp % 10);
+    temp = int(temp / 10)
+print("\nProduct of all digits in", num, ":", product)
+
+7.	add all odd numbers, ever numbers in a number separately, check whether both are equal or not
+lst = [] 
+n = int(input("Enter number of elements : ")) 
+for i in range(0, n): 
+    item = int(input()) 
+    lst.append(item) # adding the element 
+print(lst) 
+evencount, oddcount = 0, 0
+ for num in lst: 
+       if num % 2 == 0: 
+        evencount += num
+      else: 
+        oddcount += num
+ print("Sum of Even numbers in the list: ", evencount) 
+print("Sum of Odd numbers in the list: ", oddcount)
+if(evencount==oddcount):
+    print("Both  odd and even numbers are equal")
+else:
+    print("Both  odd and even numbers are not equal")
+8.	add all positive numbers, negative numbers in a number separately, check whether both are equal or not
+lst = [] 
+n = int(input("Enter number of elements : ")) 
+for i in range(0, n): 
+    item = int(input()) 
+    lst.append(item) # adding the element 
+print(lst) 
+positivecount, negativecount = 0, 0
+for num in lst: 
+      
+    # checking condition 
+    if num >= 0: 
+        positivecount += num
+  
+    else: 
+        negativecount += num
+          
+print("Sum of Even numbers in the list: ", positivecount) 
+print("Sum of Odd numbers in the list: ", negativecount)
+if(positivecount==-negativecount):
+    print("Both  +ve and -ve numbers are equal")
+else:
+    print("Both  +ve and -ve numbers are not equal")
+
+#program1
+#check whether a no is prime or not
+#prime ==> Only divisible by 1 and itself
+#i/p = 33
+#non prime
+#clues
+#33   2 to n-1  ==> non prime (break)
+#otherwise prime
+#for loop, if condition, break
+#9
+#2,3,4,5,6,7,8 ==> non prime
+#non prime
+#11
+#2,3,4,5,6,7,8,9,10
+#prime
+
+#program2
+#check list of prime numbers within a range
+
+#input1 22
+#input2 35
+#output: 23,29,31 (prime no between two ranges)
+
+'''
+n=int(input("Enter the number for finding prime number or not\n")
+if (n==1):
+        print("Not Prime Number")
+    elif (n==2):
+        print("Prime Number")
+    else:
+        for x in range(2,n):
+            if(n % x==0):
+                print ("Not prime number")
+		
+        print ("prime number")
+
+
+   
+
+#program3
+
+#check whether a no is armstrong or not
+
+#ip 197  ===> not armstrong
+#ip 370  ==> armstrong 
+
+#153  153 = 1^3 + 5 ^3 + 3^3
+#1 + 125 + 27
+#153 armstrong
+#152 ==> 1 + 125 + 8  ==> not amstrong    
+     
+#program4
+
+#list of armstrong numbers between two ranges  
+  
+
+num=int(input("Enter  number for checking armstrong or not\n"))
+sum=0   
+for i in str(num):
+     sum+=(int(i)**3)	                  
+if num == sum:
+    print(num,"is an Armstrong number")
+else:
+    print(num,"is not an Armstrong number")    
+
+
+
+num1=int(input("Enter  number num1 \n"))
+num2=int(input("Enter  number num2 \n"))
+
+sum=0   
+for i in range(num1, num2+1):
+    sum+=(int(i)**3)
+    print(sum)   
+	
+         
+
+
+           
+       
+#program5
+
+#sum of digits
+
+
+a=int(input("Enter the number for finding product of digits\n"))
+if a>=1:
+    a=str(a)
+    print("product of digits - sum, for the input given ",a," is : {}".format(sum(list(map(int, a)))))
+
+else:
+   print("Please input greater than zero")
+   
+
+#program6
+
+#product of digits
+ 
+a=int(input("Enter the number for finding product of digits\n"))
+if a>0:
+    a=str(a)
+    a.replace("0","1")
+    result=1
+    for i in int(str(a)):
+        result=result*i
+	    
+    print("product of digits - multiplication, for the input given ",a," is : {}".format(result))
+
+else:
+    print("Please input greater than zero") 
+
+'''
+#program7
+
+#add all odd numbers, ever numbers in a number separately, check whether both are equal or not
+
+#ip: [2,3,4,5,6,7,10,4,10,3,5,6,7,7,8,9,1,2,3,4,5]
+# add all the odd numbers  add all the even numbers 
+#check whether both are equal number
+
+a=[2,3,4,5,6,7,10,4,10,3,5,6,7,7,8,9,1,2,3,4,5]
+
+for i in a:
+    if i%2==1:
+        pass
+    print(i)
+
+for j in a:
+    if j%2!=1:
+        
+    #print(j)
+#if i==j:
+    #print("odd and even are same")    
+
+
+program8
+
+#add all positive numbers, negative numbers in a number separately, check whether both are equal or not
+
+#ip: [2,3,-4,5,6,-7,10,4,-10,3,-5,6,-7,7,8,-9,1,2,3,4,-5]
+# add all the +ve numbers  add all the -ve numbers 
+#check whether both are equal number
+#program9 (*)
+#fizzbuzz
+
+#ip 2  15
+#op
+#%3 ==> fizz
+#%5 ==> buzz
+#%3 and %5 ==> fizzbuzz
+#others na
+#1  na
+#2  na
+#3  fizz
+#4  na
+#5  buzz
+#6  fizz
+#7  na
+#8  na
+#9  fizz
+#10  buzz
+#11  na
+#12  fizz
+#13  na
+#14  na
+#15  fizzbuzz
+#program10 (*)
+
+#getting dynamic datastructure
+#list , set , dictionary from the user
+
+#list 
+#no of elements: 5
+#data type: int/str/float
+#[3,6,7,9,10]
+#["str","python","hello"]
+
+#set
+#no of elements: 5
+#data type: int/str/float
+#[3,6,7,9,10]
+#{}"str","python","hello"}
+
+#dictionary
+#{}
+
+#get a list/set of numbers from user (dynamic)
+
+#get number of elements 5
+#5 integers
+#list
+#listto user
+
+#get a list/set of string from user (dynamic)
+
+#no of elements
+#string from user
+
+#5
+# 56 78 45 99 3
+#[56,78,45,99,3]
+
+#get a dictionary from user
+
+#no of elements
+#default key integers  values string
+
+'''
+
+#program11
+
+#factorial of a number
+
+#6 ==> 6*5*4*3*2*1 ==>720
+
+a=int(input("Enter the number for finding factorial\n"))
+
+factorial=1
+if a>=0:
+    for n in range(1,a+1):
+        factorial=factorial*n
+        #print(factorial)
+    print("Factorial of",a,"is",factorial)
+else:
+    print("Enter valid number between 0 to n")
+
+
+
+#program12
+#fibonacci series
+
+#0,1,1,2,3,5,8,13...
+#
+#no of terms in fibo series
+
+a = int(input("How many terms? "))
+
+n1, n2 = 0, 1
+count = 0
+
+if a <= 0:
+   print("Please enter a positive integer")
+elif a == 1:
+   print("Fibonacci sequence upto",a,":")
+   print(n1)
+else:
+   print("Fibonacci sequence:")
+   while count < a:
+       print(n1)
+       nth = n1 + n2
+       n1 = n2
+       n2 = nth
+       count += 1
+    
+
+'''
+
+
